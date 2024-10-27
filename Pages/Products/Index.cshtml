@@ -1,0 +1,23 @@
+﻿@page
+@model ECom.Pages.Products.ProductsModel
+
+<h2>Product List</h2>
+<div class="product-list">
+    @if (Model.Items?.Count > 0)
+    {
+        @foreach (var product in Model.Items)
+        {
+            <div class="product-item">
+                <img src="@product.ImageURL" alt="@product.Name" style="width:200px; height:auto;" />
+                <h3>@product.Name</h3>
+                <p>@product.Description</p>
+                <p><strong>Price:</strong> $@product.Price</p>
+                <p><strong>Stock:</strong> @product.Stock</p>
+            </div>
+        }
+    }
+    else
+    {
+        <p>No products available.</p>
+    }
+</div>
